@@ -10,16 +10,46 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Категории</a>
-            </li>
+                <div v-for="category in categories" :key="category.slug">
+
+                    <li class="nav-item dropdown" v-if="category.children.length">
+
+                        <nuxt-link :to="{ name: 'index' }" class="nav-link dropdown-toggle" 
+                            id="navbarDropdown" role="button" data-toggle="dropdown" 
+                            aria-haspopup="true" aria-expanded="false">
+                            {{ category.name }}
+                        </nuxt-link>
+                        
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <nuxt-link :to="{ name: 'index' }" class="dropdown-item" 
+                                v-for="subcategory in category.children" 
+                                :key="subcategory.slug">
+                                    {{ subcategory.name }}
+                            </nuxt-link>
+                        </div>
+                        
+                    </li>
+
+                    <li class="nav-item" v-else>
+                        <nuxt-link :to="{ name: 'index' }" class="nav-link">
+                            {{ category.name }}
+                        </nuxt-link>  
+                    </li>
+
+                </div>   
             </ul>
         </div>
     </nav>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-    //
+    computed: {
+        ...mapGetters({
+            categories: 'categories'
+        })
+    }
 }
 </script>
