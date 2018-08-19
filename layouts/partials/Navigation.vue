@@ -14,15 +14,15 @@
 
                     <li class="nav-item dropdown" v-if="category.children.length">
 
-                        <nuxt-link :to="{ name: 'index' }" class="nav-link dropdown-toggle" 
-                            id="navbarDropdown" role="button" data-toggle="dropdown" 
+                        <nuxt-link :to="{ name: 'categories-slug', params: { slug: category.slug } }" 
+                            class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" 
                             aria-haspopup="true" aria-expanded="false">
                             {{ category.name }}
                         </nuxt-link>
-                        
+
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <nuxt-link :to="{ name: 'index' }" class="dropdown-item" 
-                                v-for="subcategory in category.children" 
+                            <nuxt-link :to="{ name: 'categories-slug', params: { slug: subcategory.slug } }" 
+                                class="dropdown-item" v-for="subcategory in category.children" 
                                 :key="subcategory.slug">
                                     {{ subcategory.name }}
                             </nuxt-link>
@@ -31,7 +31,9 @@
                     </li>
 
                     <li class="nav-item" v-else>
-                        <nuxt-link :to="{ name: 'index' }" class="nav-link">
+                        <nuxt-link 
+                            :to="{ name: 'categories-slug', params: { slug: category.slug } }" 
+                            class="nav-link">
                             {{ category.name }}
                         </nuxt-link>  
                     </li>
