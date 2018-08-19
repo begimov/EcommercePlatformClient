@@ -18,6 +18,14 @@ module.exports = {
     '~assets/styles/app.scss'
   ],
 
+  modules: [
+    '@nuxtjs/axios',
+  ],
+
+  axios: {
+    baseURL: 'http://ecommerceplatform.test/api'
+  },
+
   /*
   ** Customize the progress bar color
   */
