@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-body">
-            <h2><a href="">{{ product.name }}</a></h2>
+            <h2><nuxt-link :to="productLink">{{ product.name }}</nuxt-link></h2>
             <p>{{ product.description }}</p>
             <p><span class="badge badge-dark">{{ product.price }}</span></p>
         </div>
@@ -14,6 +14,14 @@ export default {
         product: {
             required: true,
             type: Object
+        }
+    },
+    computed: {
+        productLink () {
+            return { 
+                name: 'products-slug', 
+                params: { slug: this.product.slug } 
+            }
         }
     }
 }
