@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col">INDEX</div>
+      <div class="col">
+        <h1>INDEX</h1>
+      </div>
     </div>
   </div>
 </template>
