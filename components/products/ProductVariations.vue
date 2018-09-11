@@ -1,7 +1,7 @@
 <template>
     <div class="form-group">
         <select class="form-control">
-            <option>Выберите нестандартный вариант</option>
+            <option>Выберите вариант</option>
             <option v-for="variation in variations" :key="variation.id" :value="variation.id">
                 {{ variation.name }}
                 <template v-if="variation.price_differs">

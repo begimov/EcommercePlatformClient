@@ -8,6 +8,16 @@
                 <div v-if="product.variations.length">
                     <form action="">
                         <ProductVariations :variations="product.variations" />
+
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option>Выберите количество</option>
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Добавить в корзину</button>
                     </form>
                 </div>
             </div>
