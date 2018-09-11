@@ -7,7 +7,7 @@
                 <p><span class="badge badge-dark">{{ product.price }}</span></p>
                 <div>
                     <form action="">
-                        <ProductVariation />
+                        <ProductVariation v-for="variation in product.variations" :key="variation.id" :variation="variation" />
                     </form>
                 </div>
             </div>
