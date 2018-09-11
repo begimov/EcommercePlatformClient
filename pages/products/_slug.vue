@@ -5,12 +5,18 @@
                 <h1>{{ product.name }}</h1>
                 <p class="lead">{{ product.description }}</p>
                 <p><span class="badge badge-dark">{{ product.price }}</span></p>
+                <div>
+                    <form action="">
+                        <ProductVariation />
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import ProductVariation from '@/components/products/ProductVariation'
 export default {
     data () {
         return {
@@ -24,6 +30,10 @@ export default {
         return {
             product: response.data
         }
+    },
+
+    components: {
+        ProductVariation
     }
 }
 </script>
