@@ -1,6 +1,6 @@
 <template>
     <div class="form-group">
-        <select class="form-control">
+        <select class="form-control" @change="onChange">
             <option>Выберите вариант</option>
             <option v-for="variation in variations" :key="variation.id" :value="variation.id">
                 {{ variation.name }}
@@ -18,6 +18,15 @@ export default {
         variations: {
             required: true,
             type: Array
+        }
+    },
+    methods: {
+        onChange(e) {
+            this.$emit('input', this.findVariationById(e.target.value))
+        },
+        findVariationById(id) {
+            let variation = this.variations.find(variation => variation.id == id)
+            return variation ? variation : null
         }
     }
 }

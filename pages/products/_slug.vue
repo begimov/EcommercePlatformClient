@@ -7,7 +7,7 @@
                 <p><span class="badge badge-dark">{{ product.price }}</span></p>
                 <div v-if="product.variations.length">
                     <form action="">
-                        <ProductVariations :variations="product.variations" />
+                        <ProductVariations :variations="product.variations" v-model="form.variation" />
 
                         <div class="form-group">
                             <select class="form-control">
@@ -16,6 +16,8 @@
                                 <option>2</option>
                             </select>
                         </div>
+
+                        {{ form }}
 
                         <button type="submit" class="btn btn-primary">Добавить в корзину</button>
                     </form>
@@ -30,7 +32,11 @@ import ProductVariations from '@/components/products/ProductVariations'
 export default {
     data () {
         return {
-            product: null
+            product: null,
+            form: {
+                variation: '',
+                quantity: 1
+            }
         }
     },
 
