@@ -5,9 +5,9 @@
                 <h1>{{ product.name }}</h1>
                 <p class="lead">{{ product.description }}</p>
                 <p><span class="badge badge-dark">{{ product.price }}</span></p>
-                <div>
+                <div v-if="product.variations.length">
                     <form action="">
-                        <ProductVariation v-for="variation in product.variations" :key="variation.id" :variation="variation" />
+                        <ProductVariations :variations="product.variations" />
                     </form>
                 </div>
             </div>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import ProductVariation from '@/components/products/ProductVariation'
+import ProductVariations from '@/components/products/ProductVariations'
 export default {
     data () {
         return {
@@ -33,7 +33,7 @@ export default {
     },
 
     components: {
-        ProductVariation
+        ProductVariations
     }
 }
 </script>
