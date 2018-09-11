@@ -9,17 +9,16 @@
                     <form action="">
                         <ProductVariations :variations="product.variations" v-model="form.variation" />
 
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option>Выберите количество</option>
-                                <option>1</option>
-                                <option>2</option>
-                            </select>
-                        </div>
-
-                        {{ form }}
-
-                        <button type="submit" class="btn btn-primary">Добавить в корзину</button>
+                        <template v-if="form.variation">
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option>Выберите количество</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Добавить в корзину</button>
+                        </template>
                     </form>
                 </div>
             </div>
