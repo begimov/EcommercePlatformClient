@@ -11,10 +11,9 @@
 
                         <template v-if="form.variation">
                             <div class="form-group">
-                                <select class="form-control">
+                                <select class="form-control" v-model="form.quantity">
                                     <option>Выберите количество</option>
-                                    <option>1</option>
-                                    <option>2</option>
+                                    <option v-for="x in parseInt(form.variation.stock_count < 10 ? form.variation.stock_count : 10)" :key="x" :value="x">{{ x }}</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary">Добавить в корзину</button>
@@ -36,6 +35,12 @@ export default {
                 variation: '',
                 quantity: 1
             }
+        }
+    },
+
+    watch: {
+        'form.variation' () {
+            this.form.quantity = 1
         }
     },
 
