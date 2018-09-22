@@ -4,8 +4,8 @@
             <div class="col">
                 <h1>{{ product.name }}</h1>
                 <p class="lead">{{ product.description }}</p>
-                <p><span class="badge badge-dark">{{ product.price }}</span></p>
-                <div v-if="product.variations.length">
+                <p><span class="badge badge-dark">{{ product.price }}</span> <span class="badge badge-danger" v-if="!product.in_stock">закончился</span></p>
+                <div v-if="product.variations.length && product.in_stock">
                     <form action="">
                         <ProductVariations :variations="product.variations" v-model="form.variation" />
 
