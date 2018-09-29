@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-sm-6">
                 <h1 class="mb-4">Вход</h1>
-                <form>
+                <form @submit.prevent="login">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -22,6 +22,10 @@
 
 <script>
     export default {
-        //
+        methods: {
+            login () {
+                console.log('LOGIN')
+            }
+        }
     }
 </script>
