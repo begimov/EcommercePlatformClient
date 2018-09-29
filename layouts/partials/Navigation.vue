@@ -40,6 +40,13 @@
 
                 </div>   
             </ul>
+            <span class="navbar-text">
+                <nuxt-link 
+                    :to="{ name: 'auth-login' }" 
+                    class="nav-link">
+                    Войти
+                </nuxt-link> 
+            </span>
         </div>
     </nav>
 </template>
