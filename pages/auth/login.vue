@@ -2,6 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-6">
+                <h1 class="mb-4">Вход</h1>
                 <form>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
