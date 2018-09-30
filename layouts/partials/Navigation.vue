@@ -40,13 +40,30 @@
 
                 </div>   
             </ul>
-            <span class="navbar-text">
-                <nuxt-link 
-                    :to="{ name: 'auth-login' }" 
-                    class="nav-link">
-                    Войти
-                </nuxt-link> 
-            </span>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Корзина&nbsp;(0)</a>
+                    </li>
+                    
+                    <li class="nav-item" v-if="!$auth.loggedIn">
+                        <nuxt-link 
+                            :to="{ name: 'auth-login' }" 
+                            class="nav-link">
+                            Войти
+                        </nuxt-link>
+                    </li>
+                    
+                    <li class="nav-item dropdown" v-else>
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ $auth.user.name }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a href="#" class="dropdown-item">Выйти</a>
+                        </div>
+                    </li>
+                </ul>
+
         </div>
     </nav>
 </template>
