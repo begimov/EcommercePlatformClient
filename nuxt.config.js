@@ -20,7 +20,25 @@ module.exports = {
 
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
   ],
+
+  auth: {
+    strategies: {
+      local: {
+        login: {
+          url: 'auth/login',
+          method: 'post',
+          propertyName: 'meta.token'
+        },
+        user: {
+          url: 'auth/me',
+          method: 'get',
+          propertyName: 'data'
+        }
+      }
+    }
+  },
 
   axios: {
     baseURL: 'http://ecommerceplatform.test/api'
