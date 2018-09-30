@@ -26,15 +26,17 @@ module.exports = {
   auth: {
     strategies: {
       local: {
-        login: {
-          url: 'auth/login',
-          method: 'post',
-          propertyName: 'meta.token'
-        },
-        user: {
-          url: 'auth/me',
-          method: 'get',
-          propertyName: 'data'
+        endpoints: {
+          login: {
+            url: '/auth/login',
+            method: 'post',
+            propertyName: 'meta.token'
+          },
+          user: {
+            url: '/auth/me',
+            method: 'get',
+            propertyName: 'data'
+          }
         }
       }
     }

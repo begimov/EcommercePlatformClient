@@ -5,13 +5,12 @@
                 <h1 class="mb-4">Вход</h1>
                 <form @submit.prevent="login">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" v-model="form.email">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Пароль</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="inputPassword">Пароль</label>
+                        <input type="password" class="form-control" id="inputPassword" v-model="form.password">
                     </div>
                     <button type="submit" class="btn btn-primary">Войти</button>
                 </form>
@@ -22,9 +21,24 @@
 
 <script>
     export default {
+        data () {
+            return {
+                form: {
+                    email: '',
+                    password: ''
+                }
+            }
+        },
         methods: {
-            login () {
-                console.log('LOGIN')
+            async login () {
+                await this.$auth.loginWith('local', {
+                    data: this.form
+                })
+            
+
+                this.$router.replace({
+                    name: 'index'
+                })
             }
         }
     }
