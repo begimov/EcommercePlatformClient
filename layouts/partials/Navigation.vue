@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <nuxt-link class="navbar-brand" :to="{ name: 'index' }">
             STARBUCKS SHOP
         </nuxt-link>
