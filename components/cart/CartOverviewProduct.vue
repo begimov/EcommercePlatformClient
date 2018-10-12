@@ -5,8 +5,8 @@
         <td class="align-middle">{{ product.name }}</td>
         <td class="align-middle">
             <div class="input-group">
-                <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                    <option value="0">0</option>
+                <select class="custom-select" v-model="quantity">
+                    <option value="0" v-if="product.quantity == 0">0</option>
                     <option v-for="count in product.stock_count" 
                         :key="count" 
                         :value="count"
@@ -28,14 +28,26 @@
 import { mapActions } from 'vuex'
 
 export default {
+    data () {
+        return {
+            quantity: this.product.quantity
+        }
+    },
     props: {
         product: {
             required: true,
             type: Object
         }
     },
+    watch: {
+        quantity (quantity) {
+            const productId = this.product.id
+            this.update({ productId, quantity })
+        }
+    },
     methods: {
         ...mapActions({
+            update: 'cart/update',
             destroy: 'cart/destory'
         })
     }
