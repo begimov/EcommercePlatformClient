@@ -10,7 +10,7 @@
                 <cart-overview />
             </div>
         </div>
-        <div class="row">
+        <div class="row ">
             <div class="col text-right">
                 <a href="" class="btn btn-secondary">Оформить</a>
             </div>

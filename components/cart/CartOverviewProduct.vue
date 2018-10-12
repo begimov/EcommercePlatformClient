@@ -1,9 +1,9 @@
 <template>
-    <tr>
-        <td><img src="http://via.placeholder.com/60x60" alt=""></td>
-        <td>{{ product.product.name }}</td>
-        <td>{{ product.name }}</td>
-        <td>
+    <tr class="h-100">
+        <td class="align-middle"><img src="http://via.placeholder.com/60x60" alt=""></td>
+        <td class="align-middle">{{ product.product.name }}</td>
+        <td class="align-middle">{{ product.name }}</td>
+        <td class="align-middle">
             <div class="input-group">
                 <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                     <option value="0">0</option>
@@ -19,8 +19,8 @@
                 </div>
             </div>
         </td>
-        <td>{{ product.price }}</td>
-        <td>{{ product.total }}</td>
+        <td class="align-middle">{{ product.price }}</td>
+        <td class="align-middle">{{ product.total }}</td>
     </tr>
 </template>
 
