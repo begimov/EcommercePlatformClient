@@ -11,6 +11,16 @@
                     <th scope="col">Всего</th>
                 </tr>
             </thead>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-right align-middle lead">Сумма:</td>
+                    <td class="align-middle"><h3><span class="badge badge-dark">{{ subtotal }}</span></h3></td>
+                </tr>
+            </tfoot>
             <tbody>
                 <cart-overview-product v-for="product in products" :key="product.id" :product="product"/>
             </tbody>
@@ -25,7 +35,8 @@ import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
 export default {
     computed: {
         ...mapGetters({
-            products: 'cart/products'
+            products: 'cart/products',
+            subtotal: 'cart/subtotal'
         })
     },
     components: {

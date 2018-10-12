@@ -13,7 +13,7 @@
             </div>
             <div class="row">
                 <div class="col text-right">
-                    <a href="#" class="btn btn-secondary" :class="{ 'disabled': isEmpty }">Оформить</a>
+                    <a href="#" class="btn btn-secondary btn-lg" :class="{ 'disabled': isEmpty }">Оформить</a>
                 </div>
             </div>
         </template>

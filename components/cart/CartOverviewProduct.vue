@@ -20,7 +20,7 @@
             </div>
         </td>
         <td class="align-middle text-muted">{{ product.price }}</td>
-        <td class="align-middle"><h4><span class="badge badge-primary">{{ product.total }}</span></h4></td>
+        <td class="align-middle"><h4><span class="badge badge-light">{{ product.total }}</span></h4></td>
     </tr>
 </template>
 
