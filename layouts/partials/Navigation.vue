@@ -41,7 +41,7 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Корзина&nbsp;({{ productsCount }})</a>
+                        <nuxt-link :to="{ name: 'cart' }" class="nav-link">Корзина&nbsp;({{ productsCount }})</nuxt-link>
                     </li>
                     
                     <li class="nav-item" v-if="!$auth.loggedIn">
