@@ -49,6 +49,7 @@ module.exports = {
 
   axios: {
     baseURL: 'http://ecommerceplatform.test/api'
+    // baseURL: 'http://api.shoplat.ru/api'
   },
 
   /*
@@ -79,7 +80,7 @@ module.exports = {
     height: '10px'
   },
 
-  // TODO remove for SSR
+  // TODO remove for
   // mode: 'spa'
 }
 
