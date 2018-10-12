@@ -43,7 +43,7 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Корзина&nbsp;(0)</a>
+                        <a href="#" class="nav-link">Корзина&nbsp;({{ productsCount }})</a>
                     </li>
                     
                     <li class="nav-item" v-if="!$auth.loggedIn">
@@ -74,7 +74,8 @@ import { mapGetters } from 'vuex'
 export default {
     computed: {
         ...mapGetters({
-            categories: 'categories'
+            categories: 'categories',
+            productsCount: 'cart/count'
         })
     }
 }
