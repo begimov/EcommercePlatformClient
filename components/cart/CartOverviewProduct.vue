@@ -19,8 +19,8 @@
                 </div>
             </div>
         </td>
-        <td class="align-middle">{{ product.price }}</td>
-        <td class="align-middle">{{ product.total }}</td>
+        <td class="align-middle text-muted">{{ product.price }}</td>
+        <td class="align-middle"><h4><span class="badge badge-primary">{{ product.total }}</span></h4></td>
     </tr>
 </template>
 
