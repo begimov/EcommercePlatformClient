@@ -1,7 +1,10 @@
 <template>
     <div class="container mt-5">
         <div class="row">
-            <div class="col">
+            <div class="col-6">
+                <img src="http://via.placeholder.com/600x600" class="img-fluid">
+            </div>
+            <div class="col-6">
                 <h1>{{ product.name }}</h1>
                 <p class="lead">{{ product.description }}</p>
                 <p><span class="badge badge-dark">{{ product.price }}</span> <span class="badge badge-danger" v-if="!product.in_stock">закончился</span></p>

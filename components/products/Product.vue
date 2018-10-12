@@ -1,5 +1,6 @@
 <template>
     <div class="card">
+        <img class="card-img-top" src="http://via.placeholder.com/286x180">
         <div class="card-body">
             <h2><nuxt-link :to="productLink">{{ product.name }}</nuxt-link></h2>
             <p>{{ product.description }}</p>
