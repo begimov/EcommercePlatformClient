@@ -77,6 +77,9 @@ module.exports = {
   loading: {
     color: 'red',
     height: '10px'
-  }
+  },
+
+  // TODO remove for SSR
+  // mode: 'spa'
 }
 
