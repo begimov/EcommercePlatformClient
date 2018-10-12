@@ -10,9 +10,9 @@ export const mutations = {
 
 export const actions = {
     async getCart({ commit }) {
-        let response = await this.$axios.g$et('carts')
+        let response = await this.$axios.$get('carts')
         
-        commit('SET_PRODUCTS', res.data.products)
+        commit('SET_PRODUCTS', response.data.products)
 
         return response
     }
