@@ -15,7 +15,7 @@
                     </option>
                 </select>
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary btn-sm" type="button">X</button>
+                    <button class="btn btn-outline-secondary btn-sm" type="button" @click.prevent="destroy(product.id)">X</button>
                 </div>
             </div>
         </td>
@@ -25,12 +25,19 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
     props: {
         product: {
             required: true,
             type: Object
         }
+    },
+    methods: {
+        ...mapActions({
+            destroy: 'cart/destory'
+        })
     }
 }
 </script>
