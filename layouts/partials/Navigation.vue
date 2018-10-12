@@ -10,35 +10,33 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <div v-for="category in categories" :key="category.slug">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" 
+                        aria-haspopup="true" aria-expanded="false">
+                        Каталог
+                    </a>
 
-                    <li class="nav-item dropdown" v-if="category.children.length">
-
-                        <nuxt-link :to="{ name: 'categories-slug', params: { slug: category.slug } }" 
-                            class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" 
-                            aria-haspopup="true" aria-expanded="false">
-                            {{ category.name }}
-                        </nuxt-link>
-
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <nuxt-link :to="{ name: 'categories-slug', params: { slug: subcategory.slug } }" 
-                                class="dropdown-item" v-for="subcategory in category.children" 
-                                :key="subcategory.slug">
-                                    {{ subcategory.name }}
-                            </nuxt-link>
-                        </div>
-                        
-                    </li>
-
-                    <li class="nav-item" v-else>
-                        <nuxt-link 
+                    <div class="dropdown-menu" >
+                        <nuxt-link v-for="category in categories" :key="category.slug"
                             :to="{ name: 'categories-slug', params: { slug: category.slug } }" 
-                            class="nav-link">
+                            class="dropdown-item">
                             {{ category.name }}
                         </nuxt-link>  
-                    </li>
+                    </div>
+                </li>
 
-                </div>   
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Доставка</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Оплата</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Контакты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Гарантии</a>
+                </li>
             </ul>
 
                 <ul class="navbar-nav">

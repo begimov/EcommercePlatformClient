@@ -72,6 +72,11 @@ module.exports = {
         })
       }
     }
+  },
+
+  loading: {
+    color: 'red',
+    height: '10px'
   }
 }
 
