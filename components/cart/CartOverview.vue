@@ -2,26 +2,34 @@
     <table class="table bg-white">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Название</th>
+                <th scope="col">Модель</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Цена за шт.</th>
+                <th scope="col">Всего</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+            <tr v-for="product in products" :key="product.id">
+                <td>{{ product.product.name }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.total }}</td>
             </tr>
         </tbody>
     </table>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-    //
+    computed: {
+        ...mapGetters({
+            products: 'cart/products'
+        })
+    }
 }
 </script>
 
