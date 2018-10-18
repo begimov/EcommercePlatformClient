@@ -36,7 +36,8 @@ export default {
     computed: {
         ...mapGetters({
             products: 'cart/products',
-            isEmpty: 'cart/empty'
+            isEmpty: 'cart/empty',
+            changed: 'cart/changed'
         })
     },
     components: {

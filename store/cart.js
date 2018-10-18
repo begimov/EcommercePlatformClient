@@ -2,7 +2,8 @@ export const state = () => ({
     products: [],
     empty: true,
     subtotal: null,
-    total: null
+    total: null,
+    changed: false
 })
 
 export const getters = {
@@ -20,6 +21,10 @@ export const getters = {
 
     subtotal(state) {
         return state.subtotal
+    },
+
+    changed(state) {
+        return state.changed
     },
 }
 
@@ -39,6 +44,10 @@ export const mutations = {
     SET_TOTAL (state, value) {
         state.total = value
     },
+
+    SET_CHANGED (state, value) {
+        state.changed = value
+    },
 }
 
 export const actions = {
@@ -49,6 +58,7 @@ export const actions = {
         commit('SET_EMPTY', response.meta.empty)
         commit('SET_SUBTOTAL', response.meta.subtotal)
         commit('SET_TOTAL', response.meta.total)
+        commit('SET_CHANGED', response.meta.changed)
 
         return response
     },
