@@ -9,7 +9,7 @@
                 <p class="lead">{{ product.description }}</p>
                 <p><span class="badge badge-dark">{{ product.price }}</span> <span class="badge badge-danger" v-if="!product.in_stock">закончился</span></p>
                 <div v-if="product.variations.length && product.in_stock">
-                    <form action="">
+                    <form action="" @submit.prevent="add">
                         <ProductVariations :variations="product.variations" v-model="form.variation" />
 
                         <template v-if="form.variation">
@@ -29,7 +29,9 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import ProductVariations from '@/components/products/ProductVariations'
+
 export default {
     data () {
         return {
@@ -44,6 +46,28 @@ export default {
     watch: {
         'form.variation' () {
             this.form.quantity = 1
+        }
+    },
+
+    methods: {
+        ...mapActions({
+            store: 'cart/store'
+        }),
+
+        add () {
+            this.store([{
+                id: this.form.variation.id,
+                quantity: this.form.quantity
+            }])
+
+            this.form = {
+                variation: '',
+                quantity: 1
+            }
+
+            this.$router.replace({
+                name: 'cart'
+            })
         }
     },
 

@@ -63,6 +63,12 @@ export const actions = {
         return response
     },
 
+    async store({ dispatch }, products) {
+        await this.$axios.$post(`carts`, { products })
+        
+        dispatch('getCart')
+    },
+
     async update({ dispatch }, { productId, quantity }) {
         await this.$axios.$patch(`carts/${productId}`, { quantity })
         
