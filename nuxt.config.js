@@ -48,8 +48,8 @@ module.exports = {
   },
 
   axios: {
-    baseURL: 'http://ecommerceplatform.test/api'
-    // baseURL: 'http://api.shoplat.ru/api'
+    // baseURL: 'http://ecommerceplatform.test/api'
+    baseURL: 'http://api.shoplat.ru/api'
   },
 
   /*
